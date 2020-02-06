@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Corona Aware</string>
+    <string name="text_news">NEWS</string>
+    <string name="text_stats">STATS</string>
+    <string name="text_user">USER</string>
+    <string name="text_advice">ADVICE</string>
 </resources>

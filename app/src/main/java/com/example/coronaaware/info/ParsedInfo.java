@@ -17,7 +17,7 @@ public class ParsedInfo implements Runnable {
     private Handler myHand;
 
     /**
-     * Creates
+     * Constructor with backgorund handler and parsing target url
      * @param myHand handler to move data from the background thread
      * @param url website to be parsed
      */
@@ -37,7 +37,7 @@ public class ParsedInfo implements Runnable {
             Document doc = Jsoup.connect(this.url).get();
 
             msg.what = 0;
-            msg.obj= doc.title();
+            msg.obj = parseStatistics(doc.title());
         } catch (IOException e) {
             e.printStackTrace();
         } catch (Exception pokemon) {
@@ -46,5 +46,9 @@ public class ParsedInfo implements Runnable {
 
         myHand.sendMessage(msg);
 
+    }
+
+    public String parseStatistics(String source) {
+        return "";
     }
 }

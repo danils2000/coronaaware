@@ -1,23 +1,47 @@
 package com.example.coronaaware.info;
 
+/**
+ * @author andreyverbovskiy
+ * @version 1.0
+ */
 public class Statistics {
-    private int totalCases;
-    private int death;
-    private int cured;
+    private String totalCases;
+    private String death;
+    private String cured;
 
-    public Statistics(int totalCases, int death, int cured) {
+    /**
+     * Create Statistics with needed information
+     * @param totalCases total infection cases
+     * @param death total lethal cases
+     * @param cured total cured cases
+     */
+    public Statistics(String totalCases, String death, String cured) {
         this.totalCases = totalCases;
         this.death = death;
         this.cured = cured;
     }
 
-    public int getTotalCases() {
+    /**
+     *
+     * @return all the infected cases
+     */
+    public String getTotalCases() {
         return this.totalCases;
     }
-    public int death() {
+
+    /**
+     *
+     * @return all the lethal cases
+     */
+    public String getDeath() {
         return this.death;
     }
-    public int cured() {
+
+    /**
+     *
+     * @return all the cured cases
+     */
+    public String getCured() {
         return this.cured;
     }
 }

@@ -1,8 +1,8 @@
 package com.example.coronaaware;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class UserActivity extends AppCompatActivity {
 

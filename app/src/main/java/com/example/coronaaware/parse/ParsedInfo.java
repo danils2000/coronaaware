@@ -3,13 +3,16 @@ package com.example.coronaaware.parse;
 import android.os.Handler;
 import android.os.Message;
 
+import com.example.coronaaware.info.Article;
 import com.example.coronaaware.info.Statistics;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * @author DedUndead
@@ -18,15 +21,18 @@ import java.io.IOException;
 public class ParsedInfo implements Runnable {
     private String url;
     private Handler myHand;
+    private String tag;
 
     /**
      * Constructor with background handler and parsing target url
      * @param myHand handler to move data from the background thread
      * @param url website to be parsed
+     * @param tag elements to be parsed
      */
-    public ParsedInfo(Handler myHand, String url) {
+    public ParsedInfo(Handler myHand, String url, String tag) {
         this.url = url;
         this.myHand = myHand;
+        this.tag = tag;
     }
 
     /**
@@ -37,12 +43,19 @@ public class ParsedInfo implements Runnable {
         Message msg = myHand.obtainMessage();
 
         try {
+            // Connect to the website and get the needed element
             Document doc = Jsoup.connect(this.url).get();
-            Elements sourceStats = doc.getElementsByClass("maincounter-number");
-            // TODO: Find topics from news website, if logic for parsing
+            Elements source = doc.getElementsByClass(tag);
 
-            msg.what = 0;
-            msg.obj = parseStatistics(sourceStats);
+            // Check what resource is being parced
+            if (tag == "maincounter-number") {
+                msg.what = 0;
+                msg.obj = parseStatistics(source);
+            } else {
+                msg.what = 1;
+                msg.obj = parseArticle(source);
+            }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -68,5 +81,18 @@ public class ParsedInfo implements Runnable {
         return statistics;
     }
 
-    //TODO Method for parsing topics
+    /**
+     * Create the ArrayList with all the latest articles
+     * @param source parsed Elements
+     * @return new ArrayList of Article objects
+     */
+    public ArrayList<Article> parseArticle(Elements source) {
+        ArrayList<Article> topics = new ArrayList<>();
+
+        for (Element topic : source) {
+            topics.add(new Article(topic.text()));
+        }
+
+        return topics;
+    }
 }

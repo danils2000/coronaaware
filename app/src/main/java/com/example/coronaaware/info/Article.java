@@ -5,7 +5,6 @@ package com.example.coronaaware.info;
  * @version 1.0
  */
 public class Article {
-    // topic, back, constr with topic
     private String topic;
 
     /**
@@ -18,7 +17,7 @@ public class Article {
 
     /**
      *
-     * @return topic
+     * @return topic of the article
      */
     public String getTopic () {
         return this.topic;

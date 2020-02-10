@@ -15,20 +15,20 @@ public class StatsActivity extends AppCompatActivity {
     private TextView showTotal;
     private TextView showDeath;
     private TextView showCured;
+    private Statistics parsedInfo;
+    private String url = "https://www.worldometers.info/coronavirus/";
+    private String tag = "maincounter-number";
     // Create a handler to obtain information from the background thread
     private Handler handler = new Handler(Looper.myLooper()) {
 
         @Override
         public void handleMessage(Message messageInput) {
             if (messageInput.what == 0) {
-                Statistics parsedInfo = (Statistics) messageInput.obj;
-
-                // Updating UI with received information
-                showTotal.setText(parsedInfo.getTotalCases());
-                showDeath.setText(parsedInfo.getDeath());
-                showCured.setText(parsedInfo.getCured());
+                parsedInfo = (Statistics) messageInput.obj;
+                updateUI();
             }
         }
+
     };
 
     @Override
@@ -40,7 +40,18 @@ public class StatsActivity extends AppCompatActivity {
         showDeath = findViewById(R.id.tvShowDeath);
         showCured = findViewById(R.id.tvShowCured);
 
-        Thread myThread = new Thread(new ParsedInfo(handler, "https://www.worldometers.info/coronavirus/"));
+        // Start background thread for parsing
+        Thread myThread = new Thread(new ParsedInfo(handler, url, tag));
         myThread.start();
     }
+
+    /**
+     * Updating activity layout
+     */
+    protected void updateUI() {
+        showTotal.setText(parsedInfo.getTotalCases());
+        showDeath.setText(parsedInfo.getDeath());
+        showCured.setText(parsedInfo.getCured());
+    }
+
 }

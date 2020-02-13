@@ -3,6 +3,7 @@ package com.example.coronaaware.parse;
 import android.os.Handler;
 import android.os.Message;
 
+import com.example.coronaaware.News;
 import com.example.coronaaware.info.Article;
 import com.example.coronaaware.info.Statistics;
 
@@ -12,7 +13,6 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 /**
  * @author DedUndead
@@ -52,8 +52,9 @@ public class ParsedInfo implements Runnable {
                 msg.what = 0;
                 msg.obj = parseStatistics(source);
             } else {
+                parseArticle(source);
                 msg.what = 1;
-                msg.obj = parseArticle(source);
+                msg.obj = "done";
             }
 
         } catch (IOException e) {
@@ -82,17 +83,13 @@ public class ParsedInfo implements Runnable {
     }
 
     /**
-     * Create the ArrayList with all the latest articles
+     * Add the articles to list view
      * @param source parsed Elements
-     * @return new ArrayList of Article objects
      */
-    public ArrayList<Article> parseArticle(Elements source) {
-        ArrayList<Article> topics = new ArrayList<>();
-
+    public void parseArticle(Elements source) {
+        //ArrayList<Article> topics = new ArrayList<>();
         for (Element topic : source) {
-            topics.add(new Article(topic.text()));
+            News.getInstance().getNewsList().add(new Article(topic.text()));
         }
-
-        return topics;
     }
 }

@@ -22,6 +22,11 @@ public class Article {
     public String getTopic () {
         return this.topic;
     }
+
+    @Override
+    public String toString() {
+        return topic;
+    }
 }
 
 

@@ -48,7 +48,7 @@ public class ParsedInfo implements Runnable {
             Elements source = doc.getElementsByClass(tag);
 
             // Check what resource is being parced
-            if (tag == "maincounter-number") {
+            if (tag.equals("maincounter-number")) {
                 msg.what = 0;
                 msg.obj = parseStatistics(source);
             } else {
@@ -70,7 +70,7 @@ public class ParsedInfo implements Runnable {
      * @param source parsed Elements
      * @return new Statistics object
      */
-    public Statistics parseStatistics(Elements source) {
+    private Statistics parseStatistics(Elements source) {
         Statistics statistics;
 
         String total = source.get(0).text();
@@ -86,7 +86,7 @@ public class ParsedInfo implements Runnable {
      * Add the articles to list view
      * @param source parsed Elements
      */
-    public void parseArticle(Elements source) {
+    private void parseArticle(Elements source) {
         //ArrayList<Article> topics = new ArrayList<>();
         for (Element topic : source) {
             News.getInstance().getNewsList().add(new Article(topic.text()));

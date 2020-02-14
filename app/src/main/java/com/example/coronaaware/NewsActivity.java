@@ -16,8 +16,6 @@ import com.example.coronaaware.parse.ParsedInfo;
 import java.util.ArrayList;
 
 public class NewsActivity extends AppCompatActivity {
-    private TextView lastTopic;
-    private ArrayList<Article> parsedInfo = new ArrayList<>();
     private ListView lvNews;
     private String tag = "css-3ez4hu eoo0vm40";
     private String url = "https://www.nytimes.com/2020/02/10/world/asia/coronavirus-china.html";

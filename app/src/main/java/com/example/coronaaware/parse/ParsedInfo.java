@@ -62,7 +62,6 @@ public class ParsedInfo implements Runnable {
         }
 
         myHand.sendMessage(msg);
-
     }
 
     /**

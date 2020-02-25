@@ -33,8 +33,8 @@ public class UserActivity extends AppCompatActivity {
 
         Insert_Data();
         Represent_Data();
-
     }
+
     public void Insert_Data(){
         buttonInsert.setOnClickListener(
                 new View.OnClickListener() {
@@ -43,10 +43,9 @@ public class UserActivity extends AppCompatActivity {
                         boolean isInserted = coronaDb.Add_Data(etDay.getText().toString(),
                                 etTemperature.getText().toString(),
                                 etRate.getText().toString());
-                        if (isInserted==true){
+                        if (isInserted==true) {
                             Toast.makeText(UserActivity.this,"Data Inserted",Toast.LENGTH_LONG).show();
-                        }
-                        else{
+                        } else {
                             Toast.makeText(UserActivity.this,"Data not Inserted",Toast.LENGTH_LONG).show();
 
                         }
@@ -60,23 +59,23 @@ public class UserActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         Cursor res = coronaDb.Show_Data();
-                        if (res.getCount()==0){
+                        if (res.getCount()==0) {
                             Alert_Window("SOMETHING WENT WRONG","NO DATA");
                             return;
                         }
                         StringBuffer buffer = new StringBuffer();
-                        while(res.moveToNext()){
-                            buffer.append("NUMBER:"+ res.getString(0)+"\n");
-                            buffer.append("DAY:"+ res.getString(1)+"\n");
-                            buffer.append("TEMPERATURE:"+ res.getString(2)+"\n");
-                            buffer.append("RATE:"+ res.getString(3)+"\n\n");
+                        while(res.moveToNext()) {
+                            buffer.append("NUMBER: "+ res.getString(0)+"\n");
+                            buffer.append("DAY: "+ res.getString(1)+"\n");
+                            buffer.append("TEMPERATURE: "+ res.getString(2)+"\n");
+                            buffer.append("RATE: "+ res.getString(3)+"\n\n");
                         }
-                        Alert_Window("DATA",buffer.toString());
+                        Alert_Window("Health Data",buffer.toString());
                     }
                 }
         );
     }
-    public void Alert_Window(String Heading, String Alert){
+    public void Alert_Window(String Heading, String Alert) {
         AlertDialog.Builder Dialog = new AlertDialog.Builder(this);
         Dialog.setCancelable(true);
         Dialog.setTitle(Heading);

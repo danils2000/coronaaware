@@ -47,7 +47,7 @@ public class UserData extends SQLiteOpenHelper {
             return true;
         }
     }
-    public Cursor Show_Data(){
+    public Cursor Show_Data() {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res = db.rawQuery("select * from " + Table_Name, null);
         return res;

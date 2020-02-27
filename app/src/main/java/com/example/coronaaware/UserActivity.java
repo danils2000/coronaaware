@@ -43,7 +43,8 @@ public class UserActivity extends AppCompatActivity {
                         boolean isInserted = coronaDb.Add_Data(etDay.getText().toString(),
                                 etTemperature.getText().toString(),
                                 etRate.getText().toString());
-                        if (isInserted==true) {
+
+                        if (isInserted) {
                             Toast.makeText(UserActivity.this,"Data Inserted",Toast.LENGTH_LONG).show();
                         } else {
                             Toast.makeText(UserActivity.this,"Data not Inserted",Toast.LENGTH_LONG).show();
@@ -63,18 +64,21 @@ public class UserActivity extends AppCompatActivity {
                             Alert_Window("SOMETHING WENT WRONG","NO DATA");
                             return;
                         }
-                        StringBuffer buffer = new StringBuffer();
+
+                        StringBuilder builder = new StringBuilder();
                         while(res.moveToNext()) {
-                            buffer.append("NUMBER: "+ res.getString(0)+"\n");
-                            buffer.append("DAY: "+ res.getString(1)+"\n");
-                            buffer.append("TEMPERATURE: "+ res.getString(2)+"\n");
-                            buffer.append("RATE: "+ res.getString(3)+"\n\n");
+                            builder.append(getString(R.string.data,
+                                    res.getString(0),
+                                    res.getString(1),
+                                    res.getString(2),
+                                    res.getString(3)));
                         }
-                        Alert_Window("Health Data",buffer.toString());
+                        Alert_Window("Health Data", builder.toString());
                     }
                 }
         );
     }
+
     public void Alert_Window(String Heading, String Alert) {
         AlertDialog.Builder Dialog = new AlertDialog.Builder(this);
         Dialog.setCancelable(true);

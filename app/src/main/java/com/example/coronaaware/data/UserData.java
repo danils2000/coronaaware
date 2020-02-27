@@ -12,10 +12,10 @@ public class UserData extends SQLiteOpenHelper {
 
     private static final String DataBase_NAME = "CoronaUser.db";
     private static final String Table_Name = "CORONA_USER_TABLE";
-    public static final String COL_1 = "NUMBER";
-    public static final String COL_2 = "DAY";
-    public static final String COL_3 = "TEMPERATURE";
-    public static final String COL_4 = "RATE";
+    // public static final String COL_1 = "NUMBER";
+    private static final String COL_2 = "DAY";
+    private static final String COL_3 = "TEMPERATURE";
+    private static final String COL_4 = "RATE";
 
     public UserData(@Nullable Context context) {
         super(context, DataBase_NAME, null, 1);
@@ -41,12 +41,9 @@ public class UserData extends SQLiteOpenHelper {
         contentValues.put(COL_4, rate);
 
         long result = db.insert(Table_Name, null, contentValues);
-        if (result == -1) {
-            return false;
-        } else {
-            return true;
-        }
+        return result != -1;
     }
+
     public Cursor Show_Data() {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res = db.rawQuery("select * from " + Table_Name, null);

@@ -16,8 +16,6 @@ public class StatsActivity extends AppCompatActivity {
     private TextView showDeath;
     private TextView showCured;
     private Statistics parsedInfo;
-    private String url = "https://www.worldometers.info/coronavirus/";
-    private String tag = "maincounter-number";
     // Create a handler to obtain information from the background thread
     private Handler handler = new Handler(Looper.myLooper()) {
 
@@ -41,6 +39,8 @@ public class StatsActivity extends AppCompatActivity {
         showCured = findViewById(R.id.tvShowCured);
 
         // Start background thread for parsing
+        String url = "https://www.worldometers.info/coronavirus/";
+        String tag = "maincounter-number";
         Thread myThread = new Thread(new ParsedInfo(handler, url, tag));
         myThread.start();
     }
@@ -53,5 +53,4 @@ public class StatsActivity extends AppCompatActivity {
         showDeath.setText(parsedInfo.getDeath());
         showCured.setText(parsedInfo.getCured());
     }
-
 }

@@ -9,11 +9,13 @@
     <string name="stats_death">Deaths: </string>
     <string name="stats_cured">Cured: </string>
 
-    <string name="latest_news">Latest News:</string>
+    <string name="news_save">SAVE</string>
 
     <string name="text_day">Date: </string>
     <string name="text_temp">Temperature: </string>
     <string name="text_rate">Rating: </string>
     <string name="button_insert">Insert Data</string>
     <string name="button_view">Show Data</string>
+
+    <string name="data">Number: %1$s\nDay: %2$s\nTemperature: %3$s\nRate: %4$s \n </string>
 </resources>

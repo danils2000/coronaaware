@@ -17,17 +17,15 @@ import java.util.ArrayList;
 
 public class NewsActivity extends AppCompatActivity {
     private ListView lvNews;
-    private String tag = "css-3ez4hu eoo0vm40";
-    private String url = "https://www.nytimes.com/2020/02/10/world/asia/coronavirus-china.html";
     private Handler handler = new Handler(Looper.myLooper()) {
 
         @Override
         public void handleMessage(Message messageInput) {
             if (messageInput.what == 1) {
                 // Creating the adaptor for articles ListView
-                lvNews.setAdapter(new ArrayAdapter<Article>(
+                lvNews.setAdapter(new ArticleAdapter (
                         getApplicationContext(),
-                        android.R.layout.simple_list_item_1,
+                        R.layout.article_adapter,
                         News.getInstance().getNewsList()
                 ));
             }
@@ -43,6 +41,8 @@ public class NewsActivity extends AppCompatActivity {
         lvNews = findViewById(R.id.listNews);
 
         // Start background thread for parsing
+        String tag = "css-3ez4hu eoo0vm40";
+        String url = "https://www.nytimes.com/2020/02/10/world/asia/coronavirus-china.html";
         Thread myThread = new Thread(new ParsedInfo(handler, url, tag));
         myThread.start();
     }

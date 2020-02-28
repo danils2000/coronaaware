@@ -20,8 +20,10 @@
     <string name="button_delete">Delete</string>
 
     <string name="data_head">HEALTH DATA</string>
+    <string name="news_data_head">SAVED NEWS</string>
     <string name="data_empty">Data is empty</string>
     <string name="data">Data ID: %1$s\nDay: %2$s\nTemperature: %3$s\nRate: %4$s \n\n </string>
+    <string name="news_data">Article ID: %1$s\nTopic: %2$s \n\n</string>
     <string name="data_empty_error">Something went wrong! ;)</string>
     <string name="delete_mes">Data Deleted</string>
     <string name="delete_error">Data not deleted</string>

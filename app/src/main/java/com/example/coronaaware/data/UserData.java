@@ -43,7 +43,7 @@ public class UserData extends SQLiteOpenHelper {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_2, day);
         contentValues.put(COL_3, temperature);
-        contentValues.put(COL_4, rate);
+        contentValues.put(COL_4,  rate);
 
         long result = db.insert(Table_Name, null, contentValues);
         return result != -1;

@@ -10,15 +10,18 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.coronaaware.data.NewsData;
 import com.example.coronaaware.data.UserData;
 
 public class UserActivity extends AppCompatActivity {
 
+    NewsData coronaNewsDb;
     UserData coronaDb;
     EditText etDay, etTemperature, etRate, etDelete;
     Button buttonInsert;
     Button buttonView;
     Button buttonDelete;
+    Button buttonTest;
 
 
     @Override
@@ -26,6 +29,7 @@ public class UserActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
         coronaDb = new UserData(this);
+        coronaNewsDb = new NewsData(this);
 
         etDay = (EditText)findViewById(R.id.etDay);
         etTemperature = (EditText)findViewById(R.id.etTemperature);
@@ -34,10 +38,12 @@ public class UserActivity extends AppCompatActivity {
         buttonInsert = (Button)findViewById(R.id.buttonInsert);
         buttonView = (Button)findViewById(R.id.buttonView);
         buttonDelete = (Button)findViewById(R.id.buttonDelete);
+        buttonTest = findViewById(R.id.buttonTest);
 
         insertData();
         representData();
         deleteData();
+        representDataNews();
     }
 
     public void insertData(){
@@ -94,6 +100,29 @@ public class UserActivity extends AppCompatActivity {
                         } else {
                             Toast.makeText(UserActivity.this, getString(R.string.delete_error), Toast.LENGTH_LONG).show();
                         }
+                    }
+                }
+        );
+    }
+
+    public void representDataNews() {
+        buttonTest.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Cursor res = coronaNewsDb.showData();
+                        if (res.getCount() == 0) {
+                            alertWindow(getString(R.string.data_empty_error), getString(R.string.data_empty));
+                            return;
+                        }
+
+                        StringBuilder builder = new StringBuilder();
+                        while(res.moveToNext()) {
+                            builder.append(getString(R.string.news_data,
+                                    res.getString(0),
+                                    res.getString(1)));
+                        }
+                        alertWindow(getString(R.string.news_data_head), builder.toString());
                     }
                 }
         );

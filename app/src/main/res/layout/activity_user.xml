@@ -107,4 +107,27 @@
         app:layout_constraintStart_toEndOf="@+id/buttonInsert"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
+    <Button
+        android:id="@+id/buttonDelete"
+        android:layout_width="104dp"
+        android:layout_height="54dp"
+        android:text="@string/button_delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/etDelete"
+        app:layout_constraintTop_toBottomOf="@+id/buttonView" />
+
+    <EditText
+        android:id="@+id/etDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonDelete"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonInsert" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

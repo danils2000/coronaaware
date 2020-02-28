@@ -17,6 +17,14 @@
     <string name="text_rate">Rating: </string>
     <string name="button_insert">Insert Data</string>
     <string name="button_view">Show Data</string>
+    <string name="button_delete">Delete</string>
 
-    <string name="data">Number: %1$s\nDay: %2$s\nTemperature: %3$s\nRate: %4$s \n </string>
+    <string name="data_head">HEALTH DATA</string>
+    <string name="data_empty">Data is empty</string>
+    <string name="data">Data ID: %1$s\nDay: %2$s\nTemperature: %3$s\nRate: %4$s \n\n </string>
+    <string name="data_empty_error">Something went wrong! ;)</string>
+    <string name="delete_mes">Data Deleted</string>
+    <string name="delete_error">Data not deleted</string>
+    <string name="insert_mes">Data Inserted</string>
+    <string name="insert_error">Data not inserted</string>
 </resources>

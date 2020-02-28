@@ -5,14 +5,19 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.strictmode.SqliteObjectLeakedViolation;
 
 import androidx.annotation.Nullable;
 
+/**
+ * @author andreyverbovskiy
+ * @version 1.0
+ */
 public class UserData extends SQLiteOpenHelper {
 
     private static final String DataBase_NAME = "CoronaUser.db";
     private static final String Table_Name = "CORONA_USER_TABLE";
-    // public static final String COL_1 = "NUMBER";
+    public static final String COL_1 = "NUMBER";
     private static final String COL_2 = "DAY";
     private static final String COL_3 = "TEMPERATURE";
     private static final String COL_4 = "RATE";
@@ -32,7 +37,7 @@ public class UserData extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean Add_Data(String day, String temperature, String rate) {
+    public boolean addData(String day, String temperature, String rate) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues contentValues = new ContentValues();
@@ -44,9 +49,14 @@ public class UserData extends SQLiteOpenHelper {
         return result != -1;
     }
 
-    public Cursor Show_Data() {
+    public Cursor showData() {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res = db.rawQuery("select * from " + Table_Name, null);
         return res;
+    }
+
+    public Integer deleteData(String ID) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(Table_Name, "NUMBER = ? ", new String[] {ID});
     }
 }

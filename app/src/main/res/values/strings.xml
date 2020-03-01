@@ -1,4 +1,5 @@
 <resources>
+    <!-- Main Menu Strings -->
     <string name="app_name">Corona Aware</string>
     <string name="text_news">NEWS</string>
     <string name="text_stats">STATS</string>
@@ -6,27 +7,36 @@
     <string name="text_advice">ADVICE</string>
     <string name="loading">Loading..</string>
 
+    <!-- Stats and news strings -->
     <string name="stats_total">Total cases: </string>
     <string name="stats_death">Deaths: </string>
     <string name="stats_cured">Cured: </string>
-
     <string name="news_save">SAVE</string>
 
+    <!-- User Activity Strings-->
     <string name="text_day">Date: </string>
     <string name="text_temp">Temperature: </string>
     <string name="text_rate">Rating: </string>
     <string name="button_insert">Insert Data</string>
     <string name="button_view">Show Data</string>
     <string name="button_delete">Delete</string>
+    <string name="button_show_news">Saved News</string>
 
+    <!-- Data Strings -->
     <string name="data_head">HEALTH DATA</string>
     <string name="news_data_head">SAVED NEWS</string>
     <string name="data_empty">Data is empty</string>
-    <string name="data">Data ID: %1$s\nDay: %2$s\nTemperature: %3$s\nRate: %4$s \n\n </string>
+    <string name="data">Data ID: %1$s\nDay: %2$s\nTemperature: %3$s\nNotes: %4$s \n\n </string>
     <string name="news_data">Article ID: %1$s\nTopic: %2$s \n\n</string>
     <string name="data_empty_error">Something went wrong! ;)</string>
     <string name="delete_mes">Data Deleted</string>
     <string name="delete_error">Data not deleted</string>
     <string name="insert_mes">Data Inserted</string>
     <string name="insert_error">Data not inserted</string>
+
+    <!-- Hints-->
+    <string name="hint_day">dd/mm/yy</string>
+    <string name="hint_temperature">36.6 Celsius</string>
+    <string name="hint_notes">Notes and symptoms</string>
+    <string name="hint_delete">ID</string>
 </resources>

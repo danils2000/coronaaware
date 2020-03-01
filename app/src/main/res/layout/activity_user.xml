@@ -19,6 +19,7 @@
             android:id="@+id/tvDay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
             android:layout_marginRight="50dp"
             android:text="@string/text_day" />
 
@@ -27,6 +28,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="@string/hint_day"
+            android:autofillHints="@string/hint_day"
             android:inputType="textPersonName" />
     </LinearLayout>
 
@@ -43,6 +46,7 @@
             android:id="@+id/tvTemperature"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
             android:layout_marginRight="50dp"
             android:text="@string/text_temp" />
 
@@ -51,6 +55,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="@string/hint_temperature"
+            android:autofillHints="@string/hint_temperature"
             android:inputType="textPersonName" />
     </LinearLayout>
 
@@ -67,6 +73,7 @@
             android:id="@+id/tvRate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
             android:layout_marginRight="50dp"
             android:text="@string/text_rate" />
 
@@ -75,6 +82,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="@string/hint_notes"
+            android:autofillHints="@string/hint_notes"
             android:inputType="textPersonName" />
     </LinearLayout>
 
@@ -94,7 +103,8 @@
         app:layout_constraintEnd_toStartOf="@+id/buttonView"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:layout_constraintVertical_bias="0.172" />
 
     <Button
         android:id="@+id/buttonView"
@@ -105,7 +115,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/buttonInsert"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:layout_constraintVertical_bias="0.172" />
 
     <Button
         android:id="@+id/buttonDelete"
@@ -116,7 +127,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/etDelete"
-        app:layout_constraintTop_toBottomOf="@+id/buttonView" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonView"
+        app:layout_constraintVertical_bias="0.124" />
 
     <EditText
         android:id="@+id/etDelete"
@@ -124,17 +136,23 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
+        android:hint="@string/hint_delete"
+        android:autofillHints="@string/hint_delete"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonDelete"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonInsert" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonInsert"
+        app:layout_constraintVertical_bias="0.119" />
 
     <Button
-        android:id="@+id/buttonTest"
+        android:id="@+id/buttonViewNews"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:layout_marginStart="276dp"
+        android:layout_marginLeft="276dp"
+        android:layout_marginBottom="28dp"
+        android:text="@string/button_show_news"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

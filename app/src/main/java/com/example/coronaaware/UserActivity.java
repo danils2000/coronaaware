@@ -1,6 +1,7 @@
 package com.example.coronaaware;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -14,14 +15,13 @@ import com.example.coronaaware.data.NewsData;
 import com.example.coronaaware.data.UserData;
 
 public class UserActivity extends AppCompatActivity {
-
-    NewsData coronaNewsDb;
-    UserData coronaDb;
-    EditText etDay, etTemperature, etRate, etDelete;
-    Button buttonInsert;
-    Button buttonView;
-    Button buttonDelete;
-    Button buttonTest;
+    private NewsData coronaNewsDb;
+    private UserData coronaDb;
+    private EditText etDay, etTemperature, etRate, etDelete;
+    private Button buttonInsert;
+    private Button buttonView;
+    private Button buttonDelete;
+    private Button buttonViewNews;
 
 
     @Override
@@ -31,22 +31,22 @@ public class UserActivity extends AppCompatActivity {
         coronaDb = new UserData(this);
         coronaNewsDb = new NewsData(this);
 
-        etDay = (EditText)findViewById(R.id.etDay);
-        etTemperature = (EditText)findViewById(R.id.etTemperature);
-        etRate = (EditText)findViewById(R.id.etRate);
-        etDelete = (EditText)findViewById(R.id.etDelete);
-        buttonInsert = (Button)findViewById(R.id.buttonInsert);
-        buttonView = (Button)findViewById(R.id.buttonView);
-        buttonDelete = (Button)findViewById(R.id.buttonDelete);
-        buttonTest = findViewById(R.id.buttonTest);
+        etDay = findViewById(R.id.etDay);
+        etTemperature = findViewById(R.id.etTemperature);
+        etRate = findViewById(R.id.etRate);
+        etDelete = findViewById(R.id.etDelete);
+        buttonInsert = findViewById(R.id.buttonInsert);
+        buttonView = findViewById(R.id.buttonView);
+        buttonDelete = findViewById(R.id.buttonDelete);
+        buttonViewNews = findViewById(R.id.buttonViewNews);
 
-        insertData();
-        representData();
-        deleteData();
+        insertUserData();
+        representUserData();
+        deleteUserData();
         representDataNews();
     }
 
-    public void insertData(){
+    public void insertUserData(){
         buttonInsert.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -64,7 +64,7 @@ public class UserActivity extends AppCompatActivity {
                 }
         );
     }
-    public void representData(){
+    public void representUserData(){
         buttonView.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -89,7 +89,7 @@ public class UserActivity extends AppCompatActivity {
         );
     }
 
-    public void deleteData(){
+    public void deleteUserData(){
         buttonDelete.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -106,23 +106,12 @@ public class UserActivity extends AppCompatActivity {
     }
 
     public void representDataNews() {
-        buttonTest.setOnClickListener(
+        buttonViewNews.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Cursor res = coronaNewsDb.showData();
-                        if (res.getCount() == 0) {
-                            alertWindow(getString(R.string.data_empty_error), getString(R.string.data_empty));
-                            return;
-                        }
-
-                        StringBuilder builder = new StringBuilder();
-                        while(res.moveToNext()) {
-                            builder.append(getString(R.string.news_data,
-                                    res.getString(0),
-                                    res.getString(1)));
-                        }
-                        alertWindow(getString(R.string.news_data_head), builder.toString());
+                        Intent intent = new Intent(UserActivity.this, ViewNewsContent.class);
+                        startActivity(intent);
                     }
                 }
         );

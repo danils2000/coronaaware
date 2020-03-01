@@ -17,7 +17,7 @@ public class UserData extends SQLiteOpenHelper {
 
     private static final String DataBase_NAME = "CoronaUser.db";
     private static final String Table_Name = "CORONA_USER_TABLE";
-    public static final String COL_1 = "NUMBER";
+    private static final String COL_1 = "NUMBER";
     private static final String COL_2 = "DAY";
     private static final String COL_3 = "TEMPERATURE";
     private static final String COL_4 = "RATE";
@@ -51,8 +51,7 @@ public class UserData extends SQLiteOpenHelper {
 
     public Cursor showData() {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("select * from " + Table_Name, null);
-        return res;
+        return db.rawQuery("select * from " + Table_Name, null);
     }
 
     public Integer deleteData(String ID) {

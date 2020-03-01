@@ -8,17 +8,25 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+/**
+ * @author DedUndead
+ * @version 1.0
+ */
 public class NewsData extends SQLiteOpenHelper {
 
     private static final String DataBase_NAME = "CoronaNews.db";
     private static final String Table_Name = "NEWS_CORONA_TABLE";
-    public static final String COL_1 = "ID";
-    public static final String COL_2 = "TOPIC";
+    private static final String COL_1 = "ID";
+    private static final String COL_2 = "TOPIC";
 
     public NewsData(@Nullable Context context) {
         super(context, DataBase_NAME, null, 1);
     }
 
+    /**
+     * Create SQLite data table
+     * @param db current table
+     */
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table " + Table_Name + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, TOPIC TEXT)");
@@ -30,6 +38,11 @@ public class NewsData extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    /**
+     * Add data to the News database
+     * @param topic Article topic
+     * @return Was the data added ot not
+     */
     public boolean addData(String topic) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -39,9 +52,22 @@ public class NewsData extends SQLiteOpenHelper {
         return result != -1;
     }
 
+    /**
+     *
+     * @return SQLite table with all the columns
+     */
     public Cursor showData() {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("select * from " + Table_Name, null);
-        return res;
+        return db.rawQuery("select * from " + Table_Name, null);
+    }
+
+    /**
+     * Delete a raw by ID
+     * @param ID of the raw
+     * @return delete result
+     */
+    public Integer deleteData(String ID) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(Table_Name, "ID = ? ", new String[] {ID});
     }
 }

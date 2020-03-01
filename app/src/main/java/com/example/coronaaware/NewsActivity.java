@@ -20,14 +20,14 @@ import com.example.coronaaware.parse.ParsedInfo;
 import java.util.ArrayList;
 
 public class NewsActivity extends AppCompatActivity {
-    NewsData coronaNewsDb;
+    private NewsData coronaNewsDb;
     private ListView lvNews;
     private Handler handler = new Handler(Looper.myLooper()) {
 
         @Override
         public void handleMessage(Message messageInput) {
             if (messageInput.what == 1) {
-                // Creating the adaptor for articles ListView
+                // Setting the adaptor for articles ListView
                 lvNews.setAdapter(new ArticleAdapter (
                         getApplicationContext(),
                         R.layout.article_adapter,
@@ -47,11 +47,12 @@ public class NewsActivity extends AppCompatActivity {
         lvNews = findViewById(R.id.listNews);
 
         // Start background thread for parsing
-        String tag = "css-3ez4hu eoo0vm40";
-        String url = "https://www.nytimes.com/2020/02/10/world/asia/coronavirus-china.html";
+        String tag = "gs-c-promo-heading gs-o-faux-block-link__overlay-link gel-pica-bold nw-o-link-split__anchor";
+        String url = "https://bbc.com/news/health";
         Thread myThread = new Thread(new ParsedInfo(handler, url, tag));
         myThread.start();
 
+        // Save Article to the Database by clicking
         lvNews.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

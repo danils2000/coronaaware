@@ -7,6 +7,17 @@
     <string name="text_advice">ADVICE</string>
     <string name="loading">Loading..</string>
 
+    <!-- Advice Activity Strings -->
+    <string name="general_advice">GENERAL</string>
+    <string name="travelling_advice">TRAVEL</string>
+    <string name="who_advice">WHO</string>
+    <string name="general_text_mask">- Face masks offer protection</string>
+    <string name="general_text_eat">- Avoid eating raw or undercooked animal products</string>
+    <string name="general_text_help">- Seek early medical help, if any symptoms detected</string>
+    <string name="travelling_text_avoid">- Avoid infected areas</string>
+    <string name="travelling_text_journey">- Discuss journey with healthcare providers</string>
+    <string name="travelling_text_age">- Older travelers might be at high risk</string>
+
     <!-- Stats and news strings -->
     <string name="stats_total">Total cases: </string>
     <string name="stats_death">Deaths: </string>

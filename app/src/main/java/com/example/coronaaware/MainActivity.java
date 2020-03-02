@@ -19,13 +19,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Initializing buttons' IDs
+        // Initializing buttons' IDs
         stats = findViewById(R.id.buttonStats);
         news = findViewById(R.id.buttonNews);
         user = findViewById(R.id.buttonUser);
         advice = findViewById(R.id.buttonAdvice);
 
-        //Setting the event listeners for buttons
+        // Setting the event listeners for buttons
         stats.setOnClickListener(this);
         news.setOnClickListener(this);
         user.setOnClickListener(this);
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        //Each case for each button clicked
+        // Each case for each button clicked
         switch (v.getId()) {
             case R.id.buttonStats:
                 goNext(StatsActivity.class);
@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 goNext(UserActivity.class);
                 break;
             case R.id.buttonAdvice:
+                goNext(AdviceActivity.class);
                 break;
         }
     }

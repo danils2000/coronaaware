@@ -47,8 +47,8 @@ public class NewsActivity extends AppCompatActivity {
         lvNews = findViewById(R.id.listNews);
 
         // Start background thread for parsing
-        String tag = "gs-c-promo-heading gs-o-faux-block-link__overlay-link gel-pica-bold nw-o-link-split__anchor";
-        String url = "https://bbc.com/news/health";
+        String tag = "post-update__headline";
+        String url = "https://www.cbsnews.com/live-updates/coronavirus-outbreak-death-toll-us-infections-latest-news-updates-2020-03-02/";
         Thread myThread = new Thread(new ParsedInfo(handler, url, tag));
         myThread.start();
 
@@ -61,9 +61,9 @@ public class NewsActivity extends AppCompatActivity {
                 );
 
                 if (isInserted) {
-                    Toast.makeText(NewsActivity.this, "Data Saved", Toast.LENGTH_LONG).show();
+                    Toast.makeText(NewsActivity.this, getString(R.string.insert_mes), Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(NewsActivity.this, "Data now saved", Toast.LENGTH_LONG).show();
+                    Toast.makeText(NewsActivity.this, getString(R.string.insert_error), Toast.LENGTH_LONG).show();
                 }
             }
         });

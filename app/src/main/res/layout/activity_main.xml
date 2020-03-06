@@ -13,8 +13,10 @@
         android:layout_height="113dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="48dp"
         android:background="@drawable/advice"
+        app:layout_constraintEnd_toStartOf="@+id/textViewAdvice"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonUser" />
 
@@ -31,20 +33,21 @@
         app:layout_constraintHorizontal_bias="0.717"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.353" />
+        app:layout_constraintVertical_bias="0.298" />
+
 
     <Button
         android:id="@+id/buttonStats"
         android:layout_width="117dp"
         android:layout_height="114dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/stats"
+        app:layout_constraintEnd_toStartOf="@+id/textViewStats"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-
 
     <Button
         android:id="@+id/buttonNews"
@@ -52,8 +55,10 @@
         android:layout_height="114dp"
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="23dp"
+        android:layout_marginTop="36dp"
         android:background="@drawable/news"
+        app:layout_constraintEnd_toStartOf="@+id/textViewNews"
+        app:layout_constraintHorizontal_bias="0.088"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonStats" />
 
@@ -63,10 +68,13 @@
         android:layout_height="116dp"
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="56dp"
         android:background="@drawable/user"
+        app:layout_constraintEnd_toStartOf="@+id/textViewUser"
+        app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonNews" />
+
 
     <TextView
         android:id="@+id/textViewStats"
@@ -81,7 +89,7 @@
         app:layout_constraintHorizontal_bias="0.707"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.12" />
+        app:layout_constraintVertical_bias="0.085" />
 
     <TextView
         android:id="@+id/textViewUser"
@@ -96,8 +104,7 @@
         app:layout_constraintHorizontal_bias="0.695"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.566" />
-
+        app:layout_constraintVertical_bias="0.547" />
 
     <TextView
         android:id="@+id/textViewAdvice"

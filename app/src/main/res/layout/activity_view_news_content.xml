@@ -4,10 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/main"
     tools:context=".ViewNewsContent">
 
     <ListView
+        android:id="@+id/lvSavedNews"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/lvSavedNews" />
+
+        android:cacheColorHint="#000000"
+        android:textStyle="bold|italic" />
 </androidx.constraintlayout.widget.ConstraintLayout>

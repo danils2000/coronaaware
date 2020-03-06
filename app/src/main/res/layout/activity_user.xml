@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/main"
     tools:context=".UserActivity">
 
     <LinearLayout
@@ -12,6 +13,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.261"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -21,42 +23,52 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="50dp"
             android:layout_marginRight="50dp"
-            android:text="@string/text_day" />
+            android:text="@string/text_day"
+            android:textColor="#090909"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/etDay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:autofillHints="@string/hint_day"
             android:ems="10"
             android:hint="@string/hint_day"
-            android:autofillHints="@string/hint_day"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="378dp"
+        android:layout_height="47dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
         <TextView
             android:id="@+id/tvTemperature"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="47dp"
             android:layout_marginEnd="50dp"
             android:layout_marginRight="50dp"
-            android:text="@string/text_temp" />
+            android:text="@string/text_temp"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/etTemperature"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:autofillHints="@string/hint_temperature"
             android:ems="10"
             android:hint="@string/hint_temperature"
-            android:autofillHints="@string/hint_temperature"
             android:inputType="textPersonName" />
     </LinearLayout>
 
@@ -66,6 +78,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.222"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
@@ -75,15 +88,18 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="50dp"
             android:layout_marginRight="50dp"
-            android:text="@string/text_rate" />
+            android:text="@string/text_rate"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/etRate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:autofillHints="@string/hint_notes"
             android:ems="10"
             android:hint="@string/hint_notes"
-            android:autofillHints="@string/hint_notes"
             android:inputType="textPersonName" />
     </LinearLayout>
 
@@ -96,64 +112,100 @@
 
     <Button
         android:id="@+id/buttonInsert"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button_insert"
+        android:layout_width="378dp"
+        android:layout_height="48dp"
+        android:background="@drawable/buttondesing"
+
+        android:shadowColor="#940101"
+        android:shadowDx="14"
+        android:shadowDy="0"
+        android:shadowRadius="24"
+        android:text="Insert Data"
+        android:textColor="#B30000"
+        android:textSize="38sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonView"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline"
-        app:layout_constraintVertical_bias="0.172" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.524" />
 
     <Button
         android:id="@+id/buttonView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button_view"
+        android:layout_width="177dp"
+        android:layout_height="52dp"
+        android:background="@drawable/buttondesing"
+
+        android:shadowColor="#940101"
+        android:shadowDx="14"
+        android:shadowDy="0"
+        android:shadowRadius="24"
+        android:text="Show Data"
+        android:textColor="#B30000"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/buttonInsert"
-        app:layout_constraintTop_toTopOf="@+id/guideline"
-        app:layout_constraintVertical_bias="0.172" />
+        app:layout_constraintHorizontal_bias="0.072"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.671" />
 
     <Button
         android:id="@+id/buttonDelete"
-        android:layout_width="104dp"
-        android:layout_height="54dp"
-        android:text="@string/button_delete"
+        android:layout_width="121dp"
+        android:layout_height="45dp"
+        android:background="@drawable/buttondesing"
+
+        android:shadowColor="#940101"
+        android:shadowDx="14"
+        android:shadowDy="0"
+        android:shadowRadius="24"
+        android:text="Delete"
+        android:textColor="#B30000"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/etDelete"
-        app:layout_constraintTop_toBottomOf="@+id/buttonView"
-        app:layout_constraintVertical_bias="0.124" />
+        app:layout_constraintHorizontal_bias="0.944"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.892" />
 
     <EditText
         android:id="@+id/etDelete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="@string/hint_delete"
+        android:layout_width="248dp"
+        android:layout_height="58dp"
         android:autofillHints="@string/hint_delete"
+        android:ems="10"
+        android:hint="@string/hint_delete"
+        android:inputType="textPersonName"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonDelete"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.262"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonInsert"
-        app:layout_constraintVertical_bias="0.119" />
+        app:layout_constraintVertical_bias="0.737" />
 
     <Button
         android:id="@+id/buttonViewNews"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="276dp"
-        android:layout_marginLeft="276dp"
-        android:layout_marginBottom="28dp"
-        android:text="@string/button_show_news"
+        android:layout_width="189dp"
+        android:layout_height="52dp"
+        android:background="@drawable/buttondesing"
+
+        android:shadowColor="#940101"
+        android:shadowDx="14"
+        android:shadowDy="0"
+        android:shadowRadius="24"
+        android:text="Saved News"
+        android:textColor="#B30000"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.927"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.671" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

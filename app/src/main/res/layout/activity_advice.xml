@@ -4,39 +4,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/main"
     tools:context=".AdviceActivity">
 
     <Button
         android:id="@+id/buttonGeneralAdvice"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:text="@string/general_advice"
-        app:layout_constraintBottom_toTopOf="@+id/buttonTravelAdvice"
+        android:layout_width="246dp"
+        android:layout_height="71dp"
+        android:background="@drawable/buttondesing"
+
+        android:shadowColor="#940101"
+        android:shadowDx="14"
+        android:shadowDy="0"
+        android:shadowRadius="24"
+        android:text="ADVICE"
+        android:textColor="#B30000"
+        android:textSize="38sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.165" />
 
     <Button
         android:id="@+id/buttonTravelAdvice"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:text="@string/travelling_advice"
-        app:layout_constraintBottom_toTopOf="@+id/buttonWHO"
+        android:layout_width="246dp"
+        android:layout_height="69dp"
+
+        android:background="@drawable/buttondesing"
+        android:shadowColor="#940101"
+        android:shadowDy="0"
+        android:shadowRadius="24"
+        android:text="TRAVEL"
+        android:textColor="#B30000"
+        android:textSize="38sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonGeneralAdvice" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.38" />
 
     <Button
         android:id="@+id/buttonWHO"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:text="@string/who_advice"
+        android:layout_width="247dp"
+        android:layout_height="65dp"
+
+        android:background="@drawable/buttondesing"
+        android:shadowColor="#940101"
+        android:shadowDx="14"
+        android:shadowDy="0"
+        android:shadowRadius="24"
+        android:text="WHO"
+        android:textColor="#B30000"
+        android:textSize="38sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonTravelAdvice" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.59" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="631dp"
+        android:layout_height="163dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.556"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.947"
+        app:srcCompat="@drawable/logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

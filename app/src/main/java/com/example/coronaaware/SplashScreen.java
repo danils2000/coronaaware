@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-
+//https://www.youtube.com/watch?v=jXtof6OUtcE
 public class SplashScreen extends AppCompatActivity {
 //time
     private static int  SPLASH_TIME_OUT = 3000;

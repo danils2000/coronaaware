@@ -45,7 +45,7 @@ public class UserActivity extends AppCompatActivity {
         deleteUserData();
         representDataNews();
     }
-
+// saes inserted data
     public void insertUserData(){
         buttonInsert.setOnClickListener(
                 new View.OnClickListener() {
@@ -64,6 +64,7 @@ public class UserActivity extends AppCompatActivity {
                 }
         );
     }
+    // represents users data
     public void representUserData(){
         buttonView.setOnClickListener(
                 new View.OnClickListener() {
@@ -88,7 +89,7 @@ public class UserActivity extends AppCompatActivity {
                 }
         );
     }
-
+//deletes data by its ID
     public void deleteUserData(){
         buttonDelete.setOnClickListener(
                 new View.OnClickListener() {
@@ -104,7 +105,7 @@ public class UserActivity extends AppCompatActivity {
                 }
         );
     }
-
+//represents data saved from news
     public void representDataNews() {
         buttonViewNews.setOnClickListener(
                 new View.OnClickListener() {
@@ -116,7 +117,7 @@ public class UserActivity extends AppCompatActivity {
                 }
         );
     }
-
+// creates alert window that pops up by clicking a certain button
     public void alertWindow(String Heading, String Alert) {
         AlertDialog.Builder Dialog = new AlertDialog.Builder(this);
         Dialog.setCancelable(true);

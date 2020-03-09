@@ -6,6 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+/**
+ * @author danils2000
+ * @version 1.0
+ * References: https://www.youtube.com/watch?v=jXtof6OUtcE
+ */
 public class SplashScreen extends AppCompatActivity {
 //time
     private static int  SPLASH_TIME_OUT = 3000;

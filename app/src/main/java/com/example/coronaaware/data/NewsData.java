@@ -11,7 +11,10 @@ import androidx.annotation.Nullable;
 /**
  * @author DedUndead
  * @version 1.0
+ * References: https://www.youtube.com/watch?v=cp2rL3sAFmI
+ * References: https://developer.android.com/reference/android/database/sqlite/SQLiteOpenHelper
  */
+
 public class NewsData extends SQLiteOpenHelper {
 
     private static final String DataBase_NAME = "CoronaNews.db";
@@ -64,7 +67,7 @@ public class NewsData extends SQLiteOpenHelper {
     /**
      * Delete a raw by ID
      * @param ID of the raw
-     * @return delete result
+     * @return the number of deleted rows
      */
     public Integer deleteData(String ID) {
         SQLiteDatabase db = this.getWritableDatabase();

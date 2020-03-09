@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * @author DedUndead
  * @version 1.0
- * Reference:
+ * Reference:https://www.youtube.com/watch?v=E6vE8fqQPTE
  * 1.
  */
 public class ArticleAdapter extends ArrayAdapter<Article> {

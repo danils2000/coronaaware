@@ -45,7 +45,7 @@ public class UserActivity extends AppCompatActivity {
         deleteUserData();
         representDataNews();
     }
-// saes inserted data
+// saves inserted data
     public void insertUserData(){
         buttonInsert.setOnClickListener(
                 new View.OnClickListener() {

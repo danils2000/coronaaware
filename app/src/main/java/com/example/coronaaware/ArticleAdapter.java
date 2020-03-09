@@ -18,6 +18,8 @@ import java.util.List;
 /**
  * @author DedUndead
  * @version 1.0
+ * Reference:
+ * 1.
  */
 public class ArticleAdapter extends ArrayAdapter<Article> {
     private Context mContext;

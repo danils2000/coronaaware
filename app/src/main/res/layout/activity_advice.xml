@@ -17,7 +17,7 @@
         android:shadowDx="14"
         android:shadowDy="0"
         android:shadowRadius="24"
-        android:text="ADVICE"
+        android:text="@string/text_advice"
         android:textColor="#B30000"
         android:textSize="38sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -36,7 +36,7 @@
         android:shadowColor="#940101"
         android:shadowDy="0"
         android:shadowRadius="24"
-        android:text="TRAVEL"
+        android:text="@string/travelling_advice"
         android:textColor="#B30000"
         android:textSize="38sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -56,7 +56,7 @@
         android:shadowDx="14"
         android:shadowDy="0"
         android:shadowRadius="24"
-        android:text="WHO"
+        android:text="@string/who_advice"
         android:textColor="#B30000"
         android:textSize="38sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -68,14 +68,14 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="527dp"
-        android:layout_height="106dp"
+        android:layout_width="370dp"
+        android:layout_height="81dp"
+        android:contentDescription="@string/logo_des"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonWHO"
-        app:layout_constraintVertical_bias="0.838"
+        app:layout_constraintVertical_bias="0.835"
         app:srcCompat="@drawable/logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

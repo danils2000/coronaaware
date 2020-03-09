@@ -17,6 +17,9 @@ import java.io.IOException;
 /**
  * @author DedUndead
  * @version 1.2
+ * Reference:
+ * 1. Stackoverflow Elements: https://stackoverflow.com/questions/12361925/html-parsing-with-jsoup
+ * 2. Handler: https://developer.android.com/reference/android/os/Handler
  */
 public class ParsedInfo implements Runnable {
     private String url;

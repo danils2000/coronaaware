@@ -6,6 +6,7 @@
     <string name="text_user">USER</string>
     <string name="text_advice">ADVICE</string>
     <string name="loading">Loading..</string>
+    <string name="logo_des">CoronaAware logo</string>
 
     <!-- Advice Activity Strings -->
     <string name="general_advice">GENERAL</string>
@@ -14,9 +15,12 @@
     <string name="general_text_mask">- Face masks offer protection</string>
     <string name="general_text_eat">- Avoid eating raw or undercooked animal products</string>
     <string name="general_text_help">- Seek early medical help, if any symptoms detected</string>
+    <string name="general_text_wash">- Wash your hands</string>
+    <string name="general_text_anti">- Use antiseptic</string>
     <string name="travelling_text_avoid">- Avoid infected areas</string>
     <string name="travelling_text_journey">- Discuss journey with healthcare providers</string>
     <string name="travelling_text_age">- Older travelers might be at high risk</string>
+    <string name="travelling_text_days">- Who are located in epidemic area, after arriving need 14 days quarantine.</string>
 
     <!-- Stats and news strings -->
     <string name="stats_total">Total cases: </string>
